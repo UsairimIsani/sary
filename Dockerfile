@@ -21,6 +21,6 @@ RUN cargo install --target x86_64-unknown-linux-musl --path .
 # 2: Copy the exe and extra files ("static") to an empty Docker image
 FROM scratch
 COPY --from=builder /usr/local/cargo/bin/sart .
-COPY static .
+# COPY static .
 USER 1000
 CMD ["./sart"]
